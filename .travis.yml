@@ -1,0 +1,19 @@
+branches:
+  only:
+    - master
+
+before_install: npm install -g grunt-cli
+install: npm install
+language: node_js
+node_js:
+  - "0.10"
+
+env:
+  global:
+  - GH_REF: github.com/Syonet/bootstrap-legacy.git
+
+  # GH_TOKEN
+  - secure: KoiNHYq3lE0iz0T0Snt39uzasWMQDoN9YWm5KVHWB86RV4Okwg420Kre8xohREzxXc7nsOQP5TWnMJlGWmxjibx9FGnDsMPhHh8m7lIvi69liW69RPrQ3t/phhD1rjohWQ4/y8S/tKQtfIZwkJU8Tl0YAl5T0pNmo8XPoVR6FWg=
+
+after_success:
+  - git push --force --quiet "https://${GH_TOKEN}:x-oauth-basic@${GH_REF}" master:gh-pages > /dev/null 2>&1

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../../dist/bootstrap.css">
+		<link rel="stylesheet" href="../../dist/jquery.ui.css">
+		<link rel="stylesheet" href="tests.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="syo-header">
+						<h1> Navegação com o teclado </h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-medium-6">
+					<div class="test test-fixed test-lone" title="Controles de formulário">
+						<div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="text" placeholder="Focus">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<button class="syo-button"> Focus </button>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="button" value="Focus" class="syo-button">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<select><option>Focus<option></select>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<textarea>Focus</textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col col-medium-6">
+					<div class="test test-fixed test-lone" title="Paginação">
+						<div data-widget="syoPagination" data-items="3"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed test-lone" title="jqueryUI buttons">
+						<div>
+							<button data-widget="button">Focus</button>
+						</div>
+						<div>
+							<div data-widget="buttonset">
+								<input type="checkbox" id="chk-button1">
+								<label for="chk-button1">1</label>
+
+								<input type="checkbox" id="chk-button2">
+								<label for="chk-button2">2</label>
+
+								<input type="checkbox" id="chk-button3">
+								<label for="chk-button3">3</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="Navbar">
+						<div class="syo-navbar">
+							<div class="container">
+								<a href="#" class="syo-navbar-title">Focus</a>
+								<ul class="syo-nav">
+									<li class="syo-active"><a href="#">Focus</a></li>
+									<li><a href="#">Focus</a></li>
+									<li><a href="#">Focus</a></li>
+								</ul>
+								<a href="#" class="syo-pull-right syo-navbar-title">Focus</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="Slider">
+						<div data-widget="slider"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="Tabs">
+						<div data-widget="tabs">
+							<ul>
+								<li><a href="#tabs-1">Tab 1</a></li>
+								<li><a href="#tabs-2">Tab 2</a></li>
+								<li><a href="#tabs-3">Tab 3</a></li>
+							</ul>
+							<div id="tabs-1">
+								<p>Tabs test</p>
+							</div>
+							<div id="tabs-2">
+								<p>Tabs test</p>
+							</div>
+							<div id="tabs-3">
+								<p>Tabs test</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="Datepicker">
+						<div data-widget="datepicker"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../external/jquery.js"></script>
+		<script src="../../external/jquery.ui.js"></script>
+		<script src="../../scripts/pagination.js"></script>
+		<script src="tests.js"></script>
+	</body>
+</html>
