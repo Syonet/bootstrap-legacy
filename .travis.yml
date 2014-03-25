@@ -13,7 +13,7 @@ env:
   - GH_REF: github.com/Syonet/bootstrap-legacy.git
 
   # GH_TOKEN
-  - secure: KoiNHYq3lE0iz0T0Snt39uzasWMQDoN9YWm5KVHWB86RV4Okwg420Kre8xohREzxXc7nsOQP5TWnMJlGWmxjibx9FGnDsMPhHh8m7lIvi69liW69RPrQ3t/phhD1rjohWQ4/y8S/tKQtfIZwkJU8Tl0YAl5T0pNmo8XPoVR6FWg=
+  - secure: du4M6/6HkzSqxWcExdbVilEsPUMa66sjyagY+jtRaX7v/1DS1STs8NIZqzKKRXRbKxVT4coNyrepBjUZtk7a+lv2ca+mCZiwWzvtjGnMcINUnDv16ZtSJeQ+5/X1/Q+FETSrlhsiuW1p+/bjEoRsmHuzHER68d48LqyMd6b9wJY=
 
 after_success:
   - git push --force --quiet "https://${GH_TOKEN}:x-oauth-basic@${GH_REF}" master:gh-pages > /dev/null 2>&1
