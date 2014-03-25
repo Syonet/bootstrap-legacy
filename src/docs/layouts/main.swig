@@ -10,7 +10,8 @@
 
         {# Styles #}
         <link rel="stylesheet" href="assets/vendor/prettify/prettify.css">
-        <link rel="stylesheet" href="./bootstrap/dist/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/dist/bootstrap.css">
+        <link rel="stylesheet" href="dist/bootstrap-legacy.css">
         <link rel="stylesheet" href="assets/styles/main.css">
     </head>
     <body class="syo-body-navbar">
@@ -30,12 +31,12 @@
                             CSS Base
                         </a>
                     </li>
-                    <li {{ macros.activeClass( 'components' ) }}>
+                    <!--<li {{ macros.activeClass( 'components' ) }}>
                         <a href="components.html">
                             <i class="icon-flag"></i>
                             Componentes
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
                 <a href="index.html" class="syo-navbar-title syo-pull-right">Syonet Bootstrap <small style="font-size: 12px">(Legado)</small></a>
             </div>
