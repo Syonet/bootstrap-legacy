@@ -133,16 +133,9 @@ module.exports = function( grunt ) {
 	grunt.loadTasks( "build" );
 
 	// Processo principal de build
-	/*grunt.registerTask( "default", [
-		"icons", // Gera o mapeamento de icones
-		"less", // Compila os arquivos LESS
-		"jshint", // Faz o linting em todos os arquivos JS relevantes
-		"process", // Copia e inclui o banner nos arquivos de distribuição
-		"swig" // Compila a documentação do projeto
-	]);*/
 	grunt.registerTask( "default", [
 		"icons", // Gera o mapeamento de icones
-		"less:main", // Compila os arquivos LESS
+		"less", // Compila os arquivos LESS
 		"jshint", // Faz o linting em todos os arquivos JS relevantes
 		"process", // Copia e inclui o banner nos arquivos de distribuição
 		"swig" // Compila a documentação do projeto
