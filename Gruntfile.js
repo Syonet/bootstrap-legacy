@@ -18,6 +18,10 @@ module.exports = function( grunt ) {
 				files: [ "src/styles/**/*.{less,css}" ],
 				tasks: [ "less:main", "process:main" ]
 			},
+			js: {
+				files: [ "src/scripts/*.js" ],
+				tasks: [ "jshint", "copy:main" ]
+			},
 			icons: {
 				files: [ "src/fonts/*.json" ],
 				tasks: [ "icons", "process:fonts" ]
@@ -89,8 +93,16 @@ module.exports = function( grunt ) {
 			internal: [
 				"Gruntfile.js",
 				"build/*.js",
-				"assets/scripts/*.js"
+				"assets/scripts/*.js",
+				"src/scripts/*.js"
 			]
+		},
+
+		copy: {
+			main: {
+				src: 'src/scripts/pivot-table.js',
+				dest: 'dist/bootstrap-legacy.js'
+			}
 		},
 
 		// Docs
@@ -127,6 +139,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-contrib-watch" );
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
 	grunt.loadNpmTasks( "grunt-contrib-connect" );
+	grunt.loadNpmTasks( "grunt-contrib-copy" );
 	grunt.loadNpmTasks( "grunt-swig2" );
 
 	// Local
@@ -137,6 +150,7 @@ module.exports = function( grunt ) {
 		"icons", // Gera o mapeamento de icones
 		"less", // Compila os arquivos LESS
 		"jshint", // Faz o linting em todos os arquivos JS relevantes
+		"copy", // Faz a cópia do script para a pasta de distribuição
 		"process", // Copia e inclui o banner nos arquivos de distribuição
 		"swig" // Compila a documentação do projeto
 	]);

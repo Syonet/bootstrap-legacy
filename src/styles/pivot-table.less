@@ -1,0 +1,138 @@
+/* =================================================================================================================
+   Pivot-Table - Componente de tabela cruzada
+   ================================================================================================================= */
+.syo-pivot-table {
+  
+  .box-shadow( @params ) {
+    -webkit-box-shadow: @params;
+    -moz-box-shadow:    @params;
+    box-shadow:         @params;
+  }
+
+  // -- From syo-table -- //
+  td, /* 1 */
+  th { /* 1 */
+    padding: @padding-base-vertical @padding-base-horizontal;
+    line-height: @base-line-height;
+    border-bottom: 1px solid @table-border-color;
+    border-right: 1px solid @table-border-color;
+    color: @table-color;
+    text-align: left;
+    vertical-align: top;
+    overflow: hidden;
+
+    &.text-center { text-align: center; }
+    &.text-right { text-align: right; }
+    &.text-justify { text-align: justify; }
+  }
+
+  th, .fixed-corner-left {
+    font-weight: bold;
+    color: @gray-dark;
+    text-shadow: 0 1px 0 #FFF;
+    #gradient .brand();
+  }
+
+  // -- syo-pivot-table -- //
+  font-size: 12px;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid @table-border-color;
+  overflow: hidden;
+
+  .fixed-corner-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 28px;
+    border-bottom: 1px solid @table-border-color;
+    border-right: 1px solid @table-border-color;
+  }
+
+  .fixed-corner-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 17px;
+    height: 28px;
+    border-bottom: 1px solid @table-border-color;
+    color: @gray-dark;
+    text-shadow: 0 1px 0 #FFF;
+    #gradient .brand();
+  }
+
+  .pivot-column-scroller {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    bottom: 0;
+    overflow-y: hidden;
+    background: #f3f3f3;
+    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+
+    .pivot-column {
+      width: 100%;
+      margin-bottom: 17px;
+
+      th {
+        height: 28px;
+      }
+    }
+  }
+
+  .pivot-row-scroller {
+    position: absolute;
+    height: 28px;
+    right: 17px;
+    top: 0;
+    overflow-x: hidden;
+    color: @gray-dark;
+    text-shadow: 0 1px 0 #FFF;
+    #gradient .brand();
+    border-bottom: 1px solid @table-border-color;
+    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+    
+    .pivot-row {
+      height: 100%;
+
+      th {
+        border-bottom: none;
+        text-align: center;
+      }
+    }
+  }
+
+  .pivot-row-final-col {
+    width: 17px;
+    min-width: 17px;
+  }
+
+  .content-scroller {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+
+    background: #f3f3f3;
+    
+    .content td {
+      background: white;
+      text-align: center;
+      vertical-align: middle;
+      padding: 0px;
+      padding-top: 1px;
+      height: 28px;
+
+      &.double {
+        font-size: 11px;
+        line-height: 12px;
+      }
+
+      &.triple {
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+  }
+}

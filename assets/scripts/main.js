@@ -14,6 +14,11 @@
 
 		// Monta a documentação dos icones, separado em categorias
 		buildIcons();
+
+		$( '#pivotTable1' )
+				.pivotTable()
+				.pivotTable( "horizontalMerge", '#C5', '#D5' )
+				.pivotTable( "horizontalMerge", '#H3', '#I3', '#J3' );
 	});
 
 	function initPrettify() {

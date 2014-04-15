@@ -31,12 +31,12 @@
                             CSS Base
                         </a>
                     </li>
-                    <!--<li {{ macros.activeClass( 'components' ) }}>
+                    <li {{ macros.activeClass( 'components' ) }}>
                         <a href="components.html">
                             <i class="icon-flag"></i>
                             Componentes
                         </a>
-                    </li>-->
+                    </li>
                 </ul>
                 <a href="index.html" class="syo-navbar-title syo-pull-right">Syonet Bootstrap <small style="font-size: 12px">(Legado)</small></a>
             </div>
@@ -71,6 +71,7 @@
         <script src="assets/vendor/jquery.js"></script>
         <script src="assets/vendor/jquery.ui.js"></script>
         <script src="assets/vendor/jquery.mobile.js"></script>
+        <script src="dist/bootstrap-legacy.js"></script>
         <script src="assets/scripts/main.js"></script>
     </body>
 </html>

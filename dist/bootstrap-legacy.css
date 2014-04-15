@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap (Legacy) v0.1.0 - 2014-03-25
+ * Syonet Bootstrap (Legacy) v0.1.0 - 2014-04-14
  * O conjunto de ferramentas front-end legado da Syonet
  * http://syonet.github.com/bootstrap-legacy/
  *
@@ -605,4 +605,148 @@ table {
   border-top-left-radius: 0;
   -webkit-border-top-right-radius: 0;
   border-top-right-radius: 0;
+}
+/* =================================================================================================================
+   Pivot-Table - Componente de tabela cruzada
+   ================================================================================================================= */
+.syo-pivot-table {
+  font-size: 12px;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  overflow: hidden;
+}
+.syo-pivot-table td,
+.syo-pivot-table th {
+  /* 1 */
+  padding: 5px 10px;
+  line-height: 1.42857143;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  color: #444444;
+  text-align: left;
+  vertical-align: top;
+  overflow: hidden;
+}
+.syo-pivot-table td.text-center,
+.syo-pivot-table th.text-center {
+  text-align: center;
+}
+.syo-pivot-table td.text-right,
+.syo-pivot-table th.text-right {
+  text-align: right;
+}
+.syo-pivot-table td.text-justify,
+.syo-pivot-table th.text-justify {
+  text-align: justify;
+}
+.syo-pivot-table th,
+.syo-pivot-table .fixed-corner-left {
+  font-weight: bold;
+  color: #444444;
+  text-shadow: 0 1px 0 #FFF;
+  background-color: #f3f3f3;
+  background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f6f6f6), to(#eeeeee));
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: -o-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff6f6f6', endColorstr='#ffeeeeee', GradientType=0);
+}
+.syo-pivot-table .fixed-corner-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 28px;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+}
+.syo-pivot-table .fixed-corner-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 17px;
+  height: 28px;
+  border-bottom: 1px solid #cccccc;
+  color: #444444;
+  text-shadow: 0 1px 0 #FFF;
+  background-color: #f3f3f3;
+  background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f6f6f6), to(#eeeeee));
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: -o-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff6f6f6', endColorstr='#ffeeeeee', GradientType=0);
+}
+.syo-pivot-table .pivot-column-scroller {
+  position: absolute;
+  left: 0;
+  top: 28px;
+  bottom: 0;
+  overflow-y: hidden;
+  background: #f3f3f3;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+}
+.syo-pivot-table .pivot-column-scroller .pivot-column {
+  width: 100%;
+  margin-bottom: 17px;
+}
+.syo-pivot-table .pivot-column-scroller .pivot-column th {
+  height: 28px;
+}
+.syo-pivot-table .pivot-row-scroller {
+  position: absolute;
+  height: 28px;
+  right: 17px;
+  top: 0;
+  overflow-x: hidden;
+  color: #444444;
+  text-shadow: 0 1px 0 #FFF;
+  background-color: #f3f3f3;
+  background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f6f6f6), to(#eeeeee));
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: -o-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff6f6f6', endColorstr='#ffeeeeee', GradientType=0);
+  border-bottom: 1px solid #cccccc;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+}
+.syo-pivot-table .pivot-row-scroller .pivot-row {
+  height: 100%;
+}
+.syo-pivot-table .pivot-row-scroller .pivot-row th {
+  border-bottom: none;
+  text-align: center;
+}
+.syo-pivot-table .pivot-row-final-col {
+  width: 17px;
+  min-width: 17px;
+}
+.syo-pivot-table .content-scroller {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background: #f3f3f3;
+}
+.syo-pivot-table .content-scroller .content td {
+  background: white;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0px;
+  padding-top: 1px;
+  height: 28px;
+}
+.syo-pivot-table .content-scroller .content td.double {
+  font-size: 11px;
+  line-height: 12px;
+}
+.syo-pivot-table .content-scroller .content td.triple {
+  font-size: 10px;
+  line-height: 8px;
 }
