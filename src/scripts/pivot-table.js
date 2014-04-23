@@ -2,117 +2,69 @@
 
 (function( $ ) {
 
-  $.fn.pivotTable = function( opt ) {
-    var that = this[ 0 ],
-        publicApi = {},
-        args;
+  $.widget( 'syonet.pivotTable', {
+    // Default options
+    options: {
+      pivotColWidth: '100px',
+      colWidth: '80px'
+    },
 
-    var options = $.extend({
-          pivotColWidth: '100px',
-          colWidth: '80px'
-        }, opt);
+    _create: function() {
+      var that = this;
 
-    // Elementos visuais
-    var $this = $( that ),
-        $content = $( '.content-scroller', that ),
-        $pivotColumn = $( '.pivot-column-scroller', that ),
-        $pivotRow = $( '.pivot-row-scroller', that );
+      // Obtem os elementos visuais
+      this.el = {
+        $this: this.element,
+        $content: $( '.content-scroller' ),
+        $pivotColumn: $( '.pivot-column-scroller' ),
+        $pivotRow: $( '.pivot-row-scroller' )
+      };
 
-    //--------------------------------------------------------------------------------//
+      // Adiciona elementos visuais
+      this.el.$this.append( '<div class="fixed-corner-left"></div>' );
+      this.el.$this.append( '<div class="fixed-corner-right"></div>' );
 
-    /**
-     * Define/obtém a largura da coluna pivô.
-     */
-    publicApi.pivotColWidth = function( value ) {
-      if ( typeof value !== 'undefined' ) {
-        options.pivotColWidth = value;
-        $( '.pivot-column-scroller, .fixed-corner-left', that ).css( 'width', value );
-        $( '.pivot-row-scroller, .content-scroller', that ).css( 'left', value );
+      // (Re)seta propriedades
+      this.refresh();
 
-      } else {
-        return options.pivotColWidth;
-      }
+      // Adiciona o comportamento do scroll
+      this.el.$content.scroll( function() {
+        that.el.$pivotColumn.scrollTop( that.el.$content.scrollTop() );
+        that.el.$pivotRow.scrollLeft( that.el.$content.scrollLeft() );
+      });
+    },
 
-      return $this;
-    };
+    _setOptions: function() {
+      // _super and _superApply handle keeping the right this-context
+      this._superApply( arguments );
+      this.refresh();
+    },
 
-    /**
-     * Define/obtém a largura das colunas de dados.
-     */
-    publicApi.colWidth = function( value ) {
-      var $columns;
+    // _setOption is called for each individual option that is changing
+    _setOption: function( key, value ) {
+      this._super( key, value );
+    },
 
-      if ( typeof value !== 'undefined' ) {
-        options.colWidth = value;
-
-        $columns = $( '.pivot-row th, .content td', that );
-        $columns.css( 'width', value );
-        $columns.css( 'min-width', value );
-
-      } else {
-        return options.colWidth;
-      }
-
-      return $this;
-    };
-
-    /**
-     * Realiza um merge horizontal em duas ou mais células.
-     */
-    publicApi.horizontalMerge = function( /* ...tds */ ) {
+    horizontalMerge: function( /* ..tds */ ) {
       var tds = arguments,
           i = 1,
           len = tds.length;
 
       for ( ; i < len; i++ ) {
-        $( tds[ i ], $this ).remove();
+        $( tds[ i ], this.el.$this ).remove();
       }
 
-      $( tds[ 0 ], $this ).attr( 'colspan', len );
-      return $this;
-    };
+      $( tds[ 0 ], this.el.$this ).attr( 'colspan', len );
+    },
 
-    //--------------------------------------------------------------------------------//
+    refresh: function() {
+      var $columns = $( '.pivot-row th, .content td' );
+      $columns.css( 'width', this.options.colWidth );
+      $columns.css( 'min-width', this.options.colWidth );
 
-    // Acessa metodos públicos
-    if ( typeof opt === 'string' ) {
-      args = (function( args ) {
-        var ret = [], i = 1, len = args.length;
-
-        for ( ; i < len; i++ ) {
-          ret.push( args[ i ] );
-        }
-
-        return ret;
-      }( arguments ));
-
-      publicApi[ opt ].apply( that, args );
-      return this;
+      $( '.pivot-column-scroller, .fixed-corner-left' ).css( 'width', this.options.pivotColWidth );
+      $( '.pivot-row-scroller, .content-scroller' ).css( 'left', this.options.pivotColWidth );
     }
-
-    /**
-     * Inicializa o componente.
-     */
-    function init() {
-      // Adiciona elementos visuais
-      $this.append( '<div class="fixed-corner-left"></div>' );
-      $this.append( '<div class="fixed-corner-right"></div>' );
-
-      // Seta propriedades
-      publicApi.pivotColWidth( options.pivotColWidth );
-      publicApi.colWidth( options.colWidth );
-
-      // Adiciona o comportamento do scroll
-      $content.scroll( function() {
-          $pivotColumn.scrollTop( $content.scrollTop() );
-          $pivotRow.scrollLeft( $content.scrollLeft() );
-      });
-    }
-
-    // Starta o processo de inicialização
-    init();
-  
-    return $this;
-  };
+  });
 
 }( jQuery ));
