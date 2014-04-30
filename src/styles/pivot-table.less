@@ -68,7 +68,8 @@
     bottom: 0;
     overflow: hidden;
     background: #f3f3f3;
-    .box-shadow( 0px 0px 10px 0px rgba(50, 50, 50, 0.65) );
+    border-right: solid 1px @table-border-color;
+    .box-shadow( 0px 0px 5px 0px rgba(50, 50, 50, 0.65) );
 
     .pivot-column {
       width: 100%;
@@ -76,6 +77,9 @@
 
       th {
         height: 28px;
+        white-space: nowrap;
+        padding-bottom: 2px;
+        border-right: none;
       }
     }
   }
@@ -90,7 +94,7 @@
     text-shadow: 0 1px 0 #FFF;
     #gradient .brand();
     border-bottom: 1px solid @table-border-color;
-    .box-shadow( 0px 0px 10px 0px rgba(50, 50, 50, 0.65) );
+    .box-shadow( 0px 0px 5px 0px rgba(50, 50, 50, 0.65) );
     
     .pivot-row {
       height: 100%;
@@ -123,16 +127,6 @@
       padding: 0px;
       padding-top: 1px;
       height: 28px;
-
-      &.double {
-        font-size: 11px;
-        line-height: 12px;
-      }
-
-      &.triple {
-        font-size: 10px;
-        line-height: 8px;
-      }
     }
   }
 }

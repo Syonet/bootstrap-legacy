@@ -338,14 +338,14 @@
                       <td><button onclick="$('#pivotTable1').css('min-height', '400px').css('height', '400px')">400px</button></td>
 
                       <td style="text-align: right; width: 95px;"><b>colWidth</b> </td>
-                      <td><button onclick="$('#pivotTable1').pivotTable('colWidth', '80px')">80px</button></td>
-                      <td><button onclick="$('#pivotTable1').pivotTable('colWidth', '100px')">100px</button></td>
-                      <td><button onclick="$('#pivotTable1').pivotTable('colWidth', '120px')">120px</button></td>
+                      <td><button onclick="$('#pivotTable1').pivotTable({colWidth: '80px'})">80px</button></td>
+                      <td><button onclick="$('#pivotTable1').pivotTable({colWidth: '100px'})">100px</button></td>
+                      <td><button onclick="$('#pivotTable1').pivotTable({colWidth: '120px'})">120px</button></td>
                       
                       <td style="text-align: right; width: 130px;"><b>pivotColWidth</b> </td>
-                      <td><button onclick="$('#pivotTable1').pivotTable('pivotColWidth', '100px')">100px</button></td>
-                      <td><button onclick="$('#pivotTable1').pivotTable('pivotColWidth', '200px')">200px</button></td>
-                      <td><button onclick="$('#pivotTable1').pivotTable('pivotColWidth', '300px')">300px</button></td>
+                      <td><button onclick="$('#pivotTable1').pivotTable({pivotColWidth: '50px'})">100px</button></td>
+                      <td><button onclick="$('#pivotTable1').pivotTable({pivotColWidth: '200px'})">200px</button></td>
+                      <td><button onclick="$('#pivotTable1').pivotTable({pivotColWidth: '300px'})">300px</button></td>
                     <tr>
                   </tbody>
                 </table>

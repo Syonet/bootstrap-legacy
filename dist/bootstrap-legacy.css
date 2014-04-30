@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap (Legacy) v0.1.0 - 2014-04-23
+ * Syonet Bootstrap (Legacy) v0.1.0 - 2014-04-29
  * O conjunto de ferramentas front-end legado da Syonet
  * http://syonet.github.com/bootstrap-legacy/
  *
@@ -687,9 +687,10 @@ table {
   bottom: 0;
   overflow: hidden;
   background: #f3f3f3;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
-  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+  border-right: solid 1px #cccccc;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.65);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.65);
+  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.65);
 }
 .syo-pivot-table .pivot-column-scroller .pivot-column {
   width: 100%;
@@ -697,6 +698,9 @@ table {
 }
 .syo-pivot-table .pivot-column-scroller .pivot-column th {
   height: 28px;
+  white-space: nowrap;
+  padding-bottom: 2px;
+  border-right: none;
 }
 .syo-pivot-table .pivot-row-scroller {
   position: absolute;
@@ -715,9 +719,9 @@ table {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff6f6f6', endColorstr='#ffeeeeee', GradientType=0);
   border-bottom: 1px solid #cccccc;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
-  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.65);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.65);
+  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.65);
 }
 .syo-pivot-table .pivot-row-scroller .pivot-row {
   height: 100%;
@@ -745,12 +749,4 @@ table {
   padding: 0px;
   padding-top: 1px;
   height: 28px;
-}
-.syo-pivot-table .content-scroller .content td.double {
-  font-size: 11px;
-  line-height: 12px;
-}
-.syo-pivot-table .content-scroller .content td.triple {
-  font-size: 10px;
-  line-height: 8px;
 }

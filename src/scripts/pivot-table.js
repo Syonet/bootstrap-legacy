@@ -45,18 +45,6 @@
       this._super( key, value );
     },
 
-    horizontalMerge: function( /* ..tds */ ) {
-      var tds = arguments,
-          i = 1,
-          len = tds.length;
-
-      for ( ; i < len; i++ ) {
-        $( tds[ i ], this.el.$this ).remove();
-      }
-
-      $( tds[ 0 ], this.el.$this ).attr( 'colspan', len );
-    },
-
     refresh: function() {
       var $columns = $( '.pivot-row th, .content td' );
       $columns.css( 'width', this.options.colWidth );

@@ -45,10 +45,15 @@
       this._super( key, value );
     },
 
-    horizontalMerge: function( /* ..tds */ ) {
-      var tds = arguments,
-          i = 1,
-          len = tds.length;
+    horizontalMerge: function( tds ) {
+      var i = 1,
+          len;
+
+      if ( !$.isArray( tds ) ) {
+        tds = arguments;
+      }
+
+      len = tds.length;
 
       for ( ; i < len; i++ ) {
         $( tds[ i ], this.el.$this ).remove();
