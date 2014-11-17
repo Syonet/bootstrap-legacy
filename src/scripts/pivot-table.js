@@ -47,7 +47,7 @@
 
     refresh: function() {
       var $columns = $( '.pivot-row th, .content td' );
-      $columns.css( 'width', this.options.colWidth );
+      //$columns.css( 'width', this.options.colWidth );
       $columns.css( 'min-width', this.options.colWidth );
 
       $( '.pivot-column-scroller, .fixed-corner-left' ).css( 'width', this.options.pivotColWidth );
