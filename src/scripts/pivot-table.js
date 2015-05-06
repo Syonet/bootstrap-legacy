@@ -11,8 +11,6 @@
     },
 
     _create: function() {
-      var that = this;
-
       // Obtem os elementos visuais
       this.el = {
         $this: this.element,
@@ -27,12 +25,6 @@
 
       // (Re)seta propriedades
       this.refresh();
-
-      // Adiciona o comportamento do scroll
-      this.el.$content.scroll( function() {
-        that.el.$pivotColumn.scrollTop( that.el.$content.scrollTop() );
-        that.el.$pivotRow.scrollLeft( that.el.$content.scrollLeft() );
-      });
     },
 
     _setOptions: function() {
@@ -68,8 +60,8 @@
       var $headers = $( '.pivot-row th' );
       
       if ( !this.options.ignoreColWidth ) {
-	      $columns.css( 'width', this.options.colWidth );
-	      $columns.css( 'min-width', this.options.colWidth );
+        $columns.css( 'width', this.options.colWidth );
+        $columns.css( 'min-width', this.options.colWidth );
       }
       
       $headers.css( 'width', this.options.colWidth );
@@ -77,6 +69,10 @@
       
       $( '.pivot-column-scroller, .fixed-corner-left' ).css( 'width', this.options.pivotColWidth );
       $( '.pivot-row-scroller, .content-scroller' ).css( 'left', this.options.pivotColWidth );
+
+      this.el.$pivotColumn.scrollTop( this.el.$content.scrollTop() );
+      this.el.$pivotRow.scrollLeft( this.el.$content.scrollLeft() );
+   
     }
   });
 
